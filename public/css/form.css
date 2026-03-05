@@ -1,0 +1,157 @@
+/* PAGE BACKGROUND */
+.form-page {
+  min-height: 100vh;
+  padding: 120px 16px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Sama seperti hero landing */
+  background: linear-gradient(135deg, #1e3a5f, #254e70);
+}
+
+/* NAVBAR LOGO */
+/* NAVBAR LOGO */
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-logo {
+  width: 36px;
+}
+
+/* HEADER FORM */
+.disc-header {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.form-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #1e3a5f, #254e70);
+  color: #fff;
+  margin-bottom: 14px;
+}
+
+.disc-header h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 26px;
+  margin-bottom: 6px;
+}
+
+.disc-desc {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* CARD CONTAINER */
+.disc-container {
+  width: 100%;
+  max-width: 480px;
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 36px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+}
+
+.disc-header {
+  text-align: center;
+}
+
+.disc-logo {
+  max-width: 90px;
+  margin-bottom: 14px;
+}
+
+.disc-header h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 26px;
+  margin-bottom: 4px;
+}
+
+.disc-desc {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.disc-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, #e5e7eb, transparent);
+  margin: 26px 0;
+}
+
+/* FORM */
+.disc-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+  text-align: left;
+}
+
+.form-group label,
+.form-group .label {
+  font-size: 14px;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.disc-form input,
+.disc-form select {
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+/* INPUT FOCUS EFFECT */
+.disc-form input:focus,
+.disc-form select:focus {
+  outline: none;
+  border-color: #1e3a5f;
+  box-shadow: 0 0 0 3px rgba(30, 58, 95, 0.2);
+}
+
+/* RADIO */
+.radio-options {
+  display: flex;
+  gap: 24px;
+  margin-top: 6px;
+}
+
+.radio-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* BUTTON */
+.btn-primary {
+  margin-top: 12px;
+  padding: 15px;
+  border-radius: 999px;
+  border: none;
+  background: #f59e0b;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background: #ea580c;
+  transform: translateY(-2px);
+}

@@ -1,0 +1,426 @@
+/* ============================================
+   DISC RESULT — Dark Theme
+   Warna HEX solid (tidak ada var() / rgba transparan)
+   agar @media print bisa capture dengan benar
+============================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: #0b1829;
+  color: #e2e8f0;
+  min-height: 100vh;
+}
+
+body {
+  background-image:
+    radial-gradient(ellipse 80% 60% at 20% 10%, #0c2a45 0%, #0b1829 60%),
+    radial-gradient(ellipse 60% 50% at 80% 80%, #0d2040 0%, #0b1829 60%);
+  background-color: #0b1829;
+}
+
+/* ── LAYOUT ── */
+.result-page {
+  min-height: 100vh;
+  padding: 40px 20px 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.result-card {
+  max-width: 1100px;
+  width: 100%;
+  background: #112240;
+  border-radius: 24px;
+  padding: 52px 48px;
+  border: 1px solid #1e3a5f;
+  box-shadow: 0 32px 80px #000;
+  animation: fadeUp 0.5s ease both;
+}
+
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(20px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+
+/* ── HEADER ── */
+.pdf-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding-bottom: 28px;
+  margin-bottom: 36px;
+  border-bottom: 1px solid #1e3a5f;
+}
+
+.pdf-logo { width: 110px; height: 110px; object-fit: contain; }
+.pdf-header-right { text-align: right; }
+
+.pdf-label {
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 3px; text-transform: uppercase;
+  color: #0ea5e9; margin-bottom: 6px;
+}
+
+.pdf-name {
+  font-family: 'DM Serif Display', serif;
+  font-size: 28px; color: #ffffff;
+  line-height: 1.2; margin-bottom: 4px;
+}
+
+.pdf-date { font-size: 12px; color: #94a3b8; }
+
+/* ── TITLE ── */
+.title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 36px; text-align: center;
+  color: #ffffff; margin-bottom: 8px;
+}
+
+.title-line {
+  width: 60px; height: 3px;
+  background: linear-gradient(90deg, #0ea5e9, #2563eb);
+  border-radius: 2px; margin: 12px auto 0;
+}
+
+.subtitle {
+  text-align: center; color: #94a3b8;
+  font-size: 14px; margin-top: 12px;
+  margin-bottom: 40px; line-height: 1.7;
+}
+
+/* ── SCORE TABLE ── */
+.score-table {
+  margin-bottom: 32px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px #000a;
+}
+
+.score-table table { width: 100%; border-collapse: collapse; background: #ffffff; }
+
+.score-table thead { background: linear-gradient(135deg, #0b1829, #0284c7); }
+
+.score-table th {
+  padding: 15px 20px; font-size: 11px;
+  font-weight: 700; letter-spacing: 2.5px;
+  text-transform: uppercase; color: #ffffff; text-align: center;
+}
+
+.score-table tbody tr:nth-child(odd)  td { background: #ffffff; }
+.score-table tbody tr:nth-child(even) td { background: #f0f7ff; }
+
+.score-table td {
+  padding: 13px 20px; border-bottom: 1px solid #e8f0fe;
+  font-weight: 600; font-size: 15px;
+  text-align: center; color: #1e293b;
+}
+
+.score-table tbody tr:last-child td {
+  background: #eff6ff; border-top: 2px solid #bfdbfe;
+  border-bottom: none; color: #0f172a;
+}
+
+.score-table tbody tr:hover td { background: #dbeafe; }
+.score-table td:first-child { font-family: 'DM Serif Display', serif; font-size: 17px; color: #0f172a; }
+.score-table td:nth-child(2) { color: #1d4ed8; }
+.score-table td:nth-child(3) { color: #c2410c; }
+
+/* ── DOMINANT BOX ── */
+.dominant-box {
+  margin: 0 0 20px;
+  padding: 18px 20px 18px 28px;
+  border-radius: 12px;
+  background: #0d2240;
+  border: 1px solid #1d4ed8;
+  font-size: 14px; line-height: 1.7;
+  color: #e2e8f0; position: relative;
+}
+
+.dominant-box::before {
+  content: '';
+  position: absolute; left: 0; top: 0; bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, #0ea5e9, #2563eb);
+  border-radius: 4px 0 0 4px;
+}
+
+.dominant-box strong { color: #38bdf8; }
+
+/* ── ANOMALI ── */
+.anomaly {
+  display: flex; align-items: stretch;
+  margin-bottom: 24px; border-radius: 12px;
+  border: 1px solid #7f1d1d; overflow: hidden;
+}
+
+.anomaly-icon {
+  background: #dc2626; display: flex;
+  align-items: center; justify-content: center;
+  min-width: 52px; font-size: 20px;
+  color: #fff; flex-shrink: 0;
+}
+
+.anomaly-inner { background: #1c0a0a; padding: 14px 18px; flex: 1; }
+.anomaly-title { font-size: 12px; font-weight: 700; color: #fca5a5; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 4px; }
+.anomaly-desc  { font-size: 13px; color: #f87171; line-height: 1.6; }
+.hidden { display: none; }
+
+/* ── CHARTS ── */
+.charts {
+  margin-top: 36px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.chart-box {
+  background: #0d1f38;
+  padding: 18px 12px 12px;
+  border-radius: 16px;
+  border: 1px solid #1e3a5f;
+  display: flex; flex-direction: column; gap: 8px;
+  animation: fadeUp 0.5s ease both;
+}
+
+.chart-box:nth-child(1) { animation-delay: 0.1s; }
+.chart-box:nth-child(2) { animation-delay: 0.2s; }
+.chart-box:nth-child(3) { animation-delay: 0.3s; }
+
+.chart-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px #0006;
+  border-color: #1d4ed8;
+  transition: all 0.3s ease;
+}
+
+.chart-box h3 { text-align: center; font-family: 'DM Serif Display', serif; font-size: 15px; color: #ffffff; margin: 0; }
+.chart-sub    { font-size: 12px; color: #94a3b8; font-family: 'Plus Jakarta Sans', sans-serif; }
+
+.chart-legend { display: flex; align-items: center; gap: 7px; font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+.legend-bar   { width: 22px; height: 4px; border-radius: 4px; flex-shrink: 0; }
+
+/* ── NORM GRID ── */
+.norm-grid { flex: 1; }
+
+.ng-wrap {
+  position: relative;
+  /* PENTING: overflow visible agar SVG tidak terpotong */
+  overflow: visible;
+}
+
+.ng-table { width: 100%; display: flex; flex-direction: column; gap: 2px; }
+
+.ng-row {
+  display: grid;
+  grid-template-columns: 8px repeat(4, 1fr);
+  gap: 2px;
+}
+
+.ng-cell {
+  background: #091628;
+  border: 1px solid #1a2f4a;
+  border-radius: 5px;
+  min-height: 42px;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 1px; padding: 3px 2px; position: relative;
+}
+
+.ng-idx { background: transparent; border: none; min-height: unset; }
+
+.ng-cell span {
+  font-size: 10.5px; font-weight: 500;
+  color: #475569; line-height: 1.3;
+  position: relative; z-index: 2;
+}
+
+.ng-cell span.ng-circled {
+  font-size: 11px; font-weight: 700; color: #ffffff;
+  border-radius: 50%; width: 21px; height: 21px;
+  display: flex; align-items: center; justify-content: center;
+  z-index: 4; position: relative;
+}
+
+/* SVG overlay — KUNCI: position absolute, overflow visible */
+.ng-svg {
+  position: absolute;
+  top: 0; left: 0;
+  /* width & height di-set via setAttribute dari JS */
+  pointer-events: none;
+  z-index: 3;
+  overflow: visible;
+}
+
+/* ── DISC FOOTER ── */
+.disc-footer {
+  display: grid;
+  grid-template-columns: 8px repeat(4, 1fr);
+  gap: 2px; margin-top: 6px;
+}
+
+.disc-footer span {
+  text-align: center;
+  font-family: 'DM Serif Display', serif;
+  font-size: 14px; color: #64748b; letter-spacing: 2px;
+}
+
+/* ── EXPORT BUTTON ── */
+.export-bar { position: fixed; bottom: 28px; right: 28px; z-index: 999; }
+
+.btn-export {
+  display: flex; align-items: center; gap: 10px;
+  padding: 13px 26px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px; font-weight: 700; color: #fff;
+  background: linear-gradient(135deg, #0284c7, #2563eb);
+  border: none; border-radius: 50px; cursor: pointer;
+  box-shadow: 0 8px 24px #0ea5e966;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-export:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px #0ea5e988;
+}
+
+.btn-export:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+/* =====================================================
+   PRINT — satu blok tunggal, tidak ada duplikasi
+   Aktifkan "Background graphics" di dialog print
+===================================================== */
+@media print {
+
+  @page { margin: 10mm 12mm; size: A4 portrait; }
+
+  /* Sembunyikan tombol export */
+  .export-bar { display: none !important; }
+
+  /* Body & background */
+  html, body {
+    background: #0b1829 !important;
+    background-image: none !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  /* Layout */
+  .result-page { padding: 0 !important; }
+
+  .result-card {
+    background: #112240 !important;
+    border: 1px solid #1e3a5f !important;
+    border-radius: 16px !important;
+    padding: 28px 32px !important;
+    box-shadow: none !important;
+    animation: none !important;
+    max-width: 100% !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Header */
+  .pdf-label { color: #0ea5e9 !important; }
+  .pdf-name  { color: #ffffff !important; }
+  .pdf-date  { color: #94a3b8 !important; }
+  .title     { color: #ffffff !important; }
+  .subtitle  { color: #94a3b8 !important; }
+
+  /* Table */
+  .score-table {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  .score-table thead {
+    background: linear-gradient(135deg, #0b1829, #0284c7) !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  .score-table th { color: #ffffff !important; }
+  .score-table tbody tr:nth-child(odd)  td { background: #ffffff !important; color: #1e293b !important; }
+  .score-table tbody tr:nth-child(even) td { background: #f0f7ff !important; color: #1e293b !important; }
+  .score-table td:nth-child(2) { color: #1d4ed8 !important; }
+  .score-table td:nth-child(3) { color: #c2410c !important; }
+  .score-table tbody tr:last-child td {
+    background: #eff6ff !important; border-top: 2px solid #bfdbfe !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Dominant */
+  .dominant-box {
+    background: #0d2240 !important; border-color: #1d4ed8 !important;
+    color: #e2e8f0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  .dominant-box strong { color: #38bdf8 !important; }
+  .dominant-box::before {
+    background: linear-gradient(180deg, #0ea5e9, #2563eb) !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Anomali */
+  .anomaly { border-color: #7f1d1d !important; }
+  .anomaly-icon  { background: #dc2626 !important; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  .anomaly-inner { background: #1c0a0a !important; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  .anomaly-title { color: #fca5a5 !important; }
+  .anomaly-desc  { color: #f87171 !important; }
+
+  /* Charts */
+  .charts {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 10px !important; margin-top: 16px !important;
+  }
+
+  .chart-box {
+    background: #0d1f38 !important;
+    border: 1px solid #1e3a5f !important;
+    animation: none !important; transform: none !important;
+    break-inside: avoid; page-break-inside: avoid;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .chart-box h3 { color: #ffffff !important; }
+  .chart-sub    { color: #94a3b8 !important; }
+  .disc-footer span { color: #64748b !important; }
+
+  /* Norm grid cells */
+  .ng-cell {
+    background: #091628 !important;
+    border-color: #1a2f4a !important;
+    min-height: 42px !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .ng-cell span { color: #475569 !important; }
+
+  .ng-cell span.ng-circled {
+    color: #ffffff !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* ng-wrap & SVG — kunci agar garis tidak hilang/terpotong */
+  .ng-wrap {
+    position: relative !important;
+    overflow: visible !important;
+  }
+
+  .ng-svg {
+    position: absolute !important;
+    top: 0 !important; left: 0 !important;
+    overflow: visible !important;
+    z-index: 10 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}

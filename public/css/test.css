@@ -1,0 +1,787 @@
+/* ============================= */
+/* GLOBAL BACKGROUND */
+/* ============================= */
+
+body {
+  margin: 0;
+  font-family:'Plus Jakarta Sans', sans-serif;
+  background: linear-gradient(135deg, #1e3a5f, #254e70);
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Watermark Logo Lebih Elegan */
+/* ============================= */
+/* GLOBAL BACKGROUND             */
+/* ============================= */
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #1e3a5f, #254e70);
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Watermark Logo */
+body::before {
+  content: "";
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 750px;
+  height: 750px;
+  background: url('/assets/logoewf.png') no-repeat center;
+  background-size: contain;
+  transform: translate(-50%, -50%);
+  opacity: 0.20;
+  pointer-events: none;
+  z-index: 0;
+  mix-blend-mode: screen; /* logo menyatu elegan dengan background biru */
+}
+
+/* ============================= */
+/* WELCOME BOX — OPSI 2 TEAL     */
+/* ============================= */
+
+.welcome-box {
+  position: relative;
+  z-index: 2;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 36px 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  color: #ffffff;
+  min-height: 150px;
+
+  /* Warna Teal Segar */
+  background: linear-gradient(135deg, #0f4c75 0%, #1b6ca8 100%);
+  border-radius: 0 0 28px 28px;
+
+  /* Aksen garis bawah berwarna */
+  border-bottom: 4px solid transparent;
+  background-clip: padding-box;
+
+  box-shadow: 0 12px 40px rgba(15, 76, 117, 0.45);
+
+  /* Overflow hidden agar pseudo-element tidak keluar */
+  overflow: hidden;
+}
+
+/* Aksen garis bawah gradient */
+.welcome-box::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #38bdf8, #2563eb, #0ea5e9, #38bdf8);
+  background-size: 200% 100%;
+  animation: shimmer 3s linear infinite;
+}
+
+/* Shimmer animasi pada garis */
+@keyframes shimmer {
+  0%   { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+
+/* Efek cahaya subtle di dalam header */
+.welcome-box::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle, rgba(56,189,248,0.15) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ============================= */
+/* WELCOME LOGO                  */
+/* ============================= */
+
+.welcome-left {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.welcome-left img,
+.welcome-logo {
+  width: 88px;
+  height: 88px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.30));
+  transition: transform 0.3s ease;
+}
+
+.welcome-left img:hover,
+.welcome-logo:hover {
+  transform: scale(1.05);
+}
+
+/* ============================= */
+/* WELCOME TEXT                  */
+/* ============================= */
+
+.welcome-right {
+  text-align: right;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  position: relative;
+  z-index: 2;
+}
+
+.welcome-label {
+  font-size: 12px;
+  font-weight: 500;
+  opacity: 0.75;
+  margin: 0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.welcome-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+
+  /* Nama diberi warna putih terang */
+  color: #ffffff;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.2);
+}
+
+.welcome-desc {
+  font-size: 14px;
+  opacity: 0.82;
+  margin: 2px 0 0;
+  line-height: 1.65;
+  max-width: 420px;
+  margin-left: auto;
+}
+
+/* ============================= */
+/* MAIN TEST WRAPPER             */
+/* ============================= */
+
+.test-wrapper {
+  position: relative;
+  z-index: 2;
+  max-width: 1000px;
+  margin: 40px auto 80px;
+  padding: 60px 50px 80px;
+  background: #ffffff;
+  border-radius: 30px;
+  box-shadow: 0 40px 90px rgba(0,0,0,0.18);
+}
+
+/* ============================= */
+/* RESPONSIVE                    */
+/* ============================= */
+
+@media (max-width: 768px) {
+  .welcome-box {
+    flex-direction: column;
+    text-align: center;
+    padding: 28px 24px 32px;
+    gap: 16px;
+    border-radius: 0 0 20px 20px;
+  }
+
+  .welcome-right {
+    text-align: center;
+    align-items: center;
+  }
+
+  .welcome-desc {
+    margin-left: 0;
+    text-align: center;
+    font-size: 13px;
+  }
+
+  .welcome-left img,
+  .welcome-logo {
+    width: 70px;
+    height: 70px;
+  }
+
+  .welcome-name {
+    font-size: 26px;
+  }
+
+  .test-wrapper {
+    margin: 24px 15px 60px;
+    padding: 40px 25px 60px;
+  }
+}
+
+/* ============================= */
+/* MAIN CONTAINER */
+/* ============================= */
+
+.test-wrapper {
+  position: relative;
+  z-index: 2;
+  max-width: 1000px;
+  margin: 80px auto;
+  padding: 60px 50px 80px;
+  background: #ffffff;
+  border-radius: 30px;
+  box-shadow: 0 40px 90px rgba(0,0,0,0.18);
+}
+
+/* ============================= */
+/* TITLE SECTION */
+/* ============================= */
+
+.title-badge {
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #3b82f6;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.test-title {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 48px;
+  color: #1e293b;
+  margin-bottom: 50px;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.test-title .subtitle {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  color: #64748b;
+  margin-top: 10px;
+}
+
+/* Garis Accent */
+.test-title::after {
+  content: "";
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #2563eb, #3b82f6);
+  display: block;
+  margin: 18px auto 0;
+  border-radius: 10px;
+}
+
+/* ============================= */
+/* INSTRUCTION CARD */
+/* ============================= */
+
+.instruction-card {
+  background: #f8fafc;
+  border-radius: 22px;
+  padding: 32px;
+  margin-bottom: 50px;
+  box-shadow: 0 20px 45px rgba(0,0,0,.05);
+  border: 1px solid #eef2f7;
+}
+
+.instruction-card h2 {
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 12px;
+}
+
+.instruction-note {
+  margin-top: 16px;
+  padding: 16px;
+  background: #fef3c7;
+  border-left: 6px solid #f59e0b;
+  border-radius: 12px;
+  font-size: 14px;
+}
+
+/* ============================= */
+/* QUESTION BOX */
+/* ============================= */
+
+.question-box {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 30px;
+  margin-bottom: 40px;
+  box-shadow: 0 20px 50px rgba(0,0,0,.06);
+  transition: 0.3s ease;
+  border: 1px solid #f1f5f9;
+}
+
+.question-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 30px 70px rgba(0,0,0,.12);
+}
+
+.question-header {
+  display: grid;
+  grid-template-columns: 1fr 80px 80px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #475569;
+  font-size: 14px;
+}
+
+.option-row {
+  display: grid;
+  grid-template-columns: 1fr 80px 80px;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid #f1f5f9;
+  transition: 0.2s;
+}
+
+.option-row:hover {
+  background: #f8fafc;
+}
+
+.option-row:last-child {
+  border-bottom: none;
+}
+
+.option-text {
+  font-size: 15px;
+  color: #334155;
+}
+
+/* ============================= */
+/* PICK BUTTON STYLE */
+/* ============================= */
+
+.pick input {
+  display: none;
+}
+
+.pick span {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  border: 2px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all .2s ease;
+  background: #f9fafb;
+}
+
+.pick span:hover {
+  transform: scale(1.08);
+}
+
+/* MOST */
+.pick.most input:checked + span {
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  color: #fff;
+  border: none;
+  box-shadow: 0 10px 25px rgba(37,99,235,.4);
+}
+
+/* LEAST */
+.pick.least input:checked + span {
+  background: linear-gradient(135deg, #dc2626, #ef4444);
+  color: #fff;
+  border: none;
+  box-shadow: 0 10px 25px rgba(220,38,38,.4);
+}
+
+/* ============================= */
+/* BUTTON */
+/* ============================= */
+
+.navigation {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.btn-primary {
+  padding: 16px 55px;
+  font-size: 16px;
+  border-radius: 50px;
+  border: none;
+  background: linear-gradient(135deg, #1e40af, #2563eb);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .3s;
+  box-shadow: 0 15px 35px rgba(37,99,235,.35);
+}
+
+.btn-primary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px rgba(37,99,235,.5);
+}
+
+/* ============================= */
+/* WATERMARK REFINEMENT */
+/* ============================= */
+
+body::before {
+  width: 750px;          /* lebih kecil */
+  height: 750px;
+  opacity: 0.06;         /* jauh lebih halus */
+  filter: blur(2px);     /* sedikit blur agar elegan */
+}
+
+/* ============================= */
+/* WELCOME SECTION FIX */
+/* ============================= */
+
+/* ============================= */
+/* WELCOME SECTION - FIXED */
+/* ============================= */
+
+/* ============================= */
+/* GOOGLE FONTS — tambahkan di <head> HTML:
+   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+*/
+/* ============================= */
+
+/* ============================= */
+/* GLOBAL BACKGROUND             */
+/* ============================= */
+
+body {
+  margin: 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: linear-gradient(135deg, #1e3a5f, #254e70);
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Watermark Logo */
+body::before {
+  content: "";
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 750px;
+  height: 750px;
+  background: url('/assets/logoewf.png') no-repeat center;
+  background-size: contain;
+  transform: translate(-50%, -50%);
+  opacity: 0.20;
+  pointer-events: none;
+  z-index: 0;
+  mix-blend-mode: screen;
+}
+
+/* ============================= */
+/* WELCOME BOX — FULL WIDTH      */
+/* ============================= */
+
+.welcome-box {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 36px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  color: #ffffff;
+  min-height: 180px;
+
+  background: linear-gradient(135deg, #0f4c75 0%, #1b6ca8 100%);
+  border-radius: 0;
+  box-shadow: 0 8px 32px rgba(15, 76, 117, 0.5);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Aksen garis bawah shimmer */
+.welcome-box::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #38bdf8, #2563eb, #0ea5e9, #38bdf8);
+  background-size: 200% 100%;
+  animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+
+/* Efek cahaya sudut kanan */
+.welcome-box::before {
+  content: "";
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(56,189,248,0.18) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ============================= */
+/* WELCOME LOGO — LEBIH BESAR    */
+/* ============================= */
+
+.welcome-left {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.welcome-left img,
+.welcome-logo {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.35));
+  transition: transform 0.35s ease;
+}
+
+.welcome-left img:hover,
+.welcome-logo:hover {
+  transform: scale(1.06) rotate(-2deg);
+}
+
+/* ============================= */
+/* WELCOME TEXT                  */
+/* ============================= */
+
+.welcome-right {
+  text-align: right;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+  z-index: 2;
+}
+
+.welcome-label {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  opacity: 0.70;
+  margin: 0;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.welcome-name {
+  font-family: 'Sora', sans-serif;
+  font-size: 38px;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.15;
+  letter-spacing: -1px;
+  color: #ffffff;
+  text-shadow: 0 2px 16px rgba(0,0,0,0.2);
+}
+
+.welcome-desc {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14.5px;
+  font-weight: 400;
+  opacity: 0.82;
+  margin: 4px 0 0;
+  line-height: 1.7;
+  max-width: 440px;
+  margin-left: auto;
+}
+
+/* ============================= */
+/* MAIN TEST WRAPPER             */
+/* ============================= */
+
+.test-wrapper {
+  position: relative;
+  z-index: 2;
+  max-width: 1000px;
+  margin: 40px auto 80px;
+  padding: 60px 50px 80px;
+  background: #ffffff;
+  border-radius: 30px;
+  box-shadow: 0 40px 90px rgba(0,0,0,0.18);
+}
+
+/* Font di dalam form juga ikut diperbarui */
+.test-title,
+.instruction-card h2,
+.question-box h3 {
+  font-family: 'Sora', sans-serif;
+}
+
+.title-badge,
+.option-text,
+.instruction-card p,
+.instruction-card li,
+.instruction-note,
+.question-header,
+.btn-primary {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* ============================= */
+/* RESPONSIVE                    */
+/* ============================= */
+
+@media (max-width: 768px) {
+  .welcome-box {
+    flex-direction: column;
+    text-align: center;
+    padding: 32px 24px 36px;
+    gap: 18px;
+  }
+
+  .welcome-right {
+    text-align: center;
+    align-items: center;
+  }
+
+  .welcome-desc {
+    margin-left: 0;
+    text-align: center;
+    font-size: 13.5px;
+  }
+
+  .welcome-left img,
+  .welcome-logo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .welcome-name {
+    font-size: 28px;
+    letter-spacing: -0.5px;
+  }
+
+  .test-wrapper {
+    margin: 24px 15px 60px;
+    padding: 40px 25px 60px;
+  }
+}
+
+/* ============================= */
+/* SPACING TEST WRAPPER */
+/* ============================= */
+
+.test-wrapper {
+  margin-top: 40px;
+}
+
+/* ============================= */
+/* RESPONSIVE - WELCOME */
+/* ============================= */
+
+@media (max-width: 768px) {
+  .welcome-box {
+    flex-direction: column;
+    text-align: center;
+    padding: 28px 20px;
+    gap: 16px;
+  }
+
+  .welcome-right {
+    text-align: center;
+    align-items: center;
+  }
+
+  .welcome-desc {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .welcome-left img,
+  .welcome-logo {
+    width: 70px;
+    height: 70px;
+  }
+
+  .welcome-name {
+    font-size: 24px;
+  }
+}
+
+/* ============================= */
+/* SPACING IMPROVEMENT */
+/* ============================= */
+
+.test-wrapper {
+  margin-top: 60px;  /* sebelumnya terlalu jauh */
+}
+
+/* ============================= */
+/* BETTER QUESTION SPACING */
+/* ============================= */
+
+.question-box h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-family: 'Poppins', sans-serif;
+  color: #1e293b;
+}
+
+.option-row {
+  padding: 16px 0;
+}
+
+/* ============================= */
+/* RESPONSIVE FIX */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+  .welcome-box {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .welcome-right {
+    text-align: center;
+  }
+
+  .test-wrapper {
+    margin: 40px 15px;
+    padding: 40px 25px 60px;
+  }
+
+  .question-header,
+  .option-row {
+    grid-template-columns: 1fr 60px 60px;
+  }
+
+  .pick span {
+    width: 36px;
+    height: 36px;
+  }
+
+}
+

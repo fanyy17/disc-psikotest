@@ -1,0 +1,184 @@
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #f8fafc;
+  color: #1e293b;
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 20px 0;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.nav-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-text {
+  font-weight: 600;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-btn {
+  padding: 8px 18px;
+  background: #f59e0b;
+  border-radius: 20px;
+  color: rgb(255, 255, 255) !important;
+}
+
+/* STATE */
+.navbar.transparent {
+  background: transparent;
+}
+
+.navbar.transparent .logo-text,
+.navbar.transparent .nav-links a {
+  color: white;
+}
+
+.navbar.scrolled {
+  background: white;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  padding: 12px 0;
+}
+
+.navbar.scrolled .logo-text,
+.navbar.scrolled .nav-links a {
+  color: #1e293b;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(135deg, #1e3a5f, #254e70);
+  color: white;
+  text-align: center;
+  padding: 180px 20px 140px;
+  position: relative;
+}
+
+.hero h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 44px;
+}
+
+.hero p {
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+/* HERO LOGO */
+.hero-logo {
+  width: 130px;
+  margin-bottom: 30px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Optional: animasi smooth muncul */
+.hero-logo {
+  animation: fadeDown 1s ease;
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Curve */
+.hero-curve {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: #f8fafc;
+  border-top-left-radius: 100% 80px;
+  border-top-right-radius: 100% 80px;
+}
+
+/* CONTENT */
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 80px 20px;
+}
+
+.alt {
+  background: #f1f5f9;
+  border-radius: 20px;
+}
+
+ul {
+  padding-left: 20px;
+  line-height: 1.8;
+}
+
+/* CTA */
+.cta {
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.cta-box {
+  background: linear-gradient(135deg, #1e3a5f, #254e70);
+  color: white;
+  padding: 60px 40px;
+  border-radius: 25px;
+  max-width: 700px;
+  margin: auto;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.btn-primary {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 14px 40px;
+  background: #f59e0b;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background: #ea580c;
+  transform: translateY(-3px);
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 30px;
+  background: #0f172a;
+  color: #cbd5e1;
+}
